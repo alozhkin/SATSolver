@@ -8,7 +8,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class SolverTests {
-    private final static String DIR_WITH_TEST_FILES = "res/testfiles";
+    private final static String DIRECTORY_WITH_TEST_FILES = "res/testfiles";
 
     @ParameterizedTest
     @MethodSource("getAllFilenamesInDir")
@@ -19,7 +19,7 @@ public class SolverTests {
     }
 
     static List<String> getAllFilenamesInDir() throws IOException {
-        return Files.walk(Path.of(DIR_WITH_TEST_FILES))
+        return Files.walk(Path.of(DIRECTORY_WITH_TEST_FILES))
                 .filter(Files::isRegularFile)
                 .map(Path::toString)
                 .collect(Collectors.toList());
